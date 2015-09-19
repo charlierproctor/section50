@@ -5,9 +5,16 @@ angular.module('section50', [
   'section50.sections',
   'section50.menu',
   'ui.ace',
-  'firebase'
+  'firebase',
+  'hc.marked'
 ]).
-config(['$stateProvider','$urlRouterProvider',
-	function($stateProvider,$urlRouterProvider) {
+config(['$stateProvider','$urlRouterProvider','markedProvider',
+	function($stateProvider,$urlRouterProvider,markedProvider) {
 		$urlRouterProvider.otherwise("/section/2");
+		markedProvider.setOptions({
+			gfm: true,
+			highlight: function (code) {
+				return hljs.highlightAuto(code).value;
+			}
+		});
 	}])

@@ -28,6 +28,9 @@ var paths = {
   sass: [
   	'src/css/*.scss'
   ],
+  css: [
+    'src/bower_components/highlightjs/styles/default.css'
+  ],
   img: [
   	'src/img/**/*'
   ],
@@ -62,13 +65,25 @@ gulp.task('sass', ['bower','clean'], function() {
   .pipe(gulpif(options.env === 'development', sass()))
 	.pipe(gulp.dest('dist'))
 })
+gulp.task('css', ['bower','clean'], function() {
+  return gulp.src(paths.css)
+  .pipe(gulpif(options.env === 'development', using()))
+  .pipe(concat('lib.css'))
+  .pipe(gulp.dest('dist'))
+})
 gulp.task('img', ['bower','clean'], function() {
 	return gulp.src(paths.img)
   .pipe(gulpif(options.env === 'development', using()))
 	.pipe(gulp.dest('dist/img'))
 })
 gulp.task('vendor', ['bower','clean'], function() {
-	return gulp.src(bowerFiles().concat(paths.libs))
+	return gulp.src(bowerFiles({
+    "overrides":{
+      "highlightjs": {
+        "main":"highlight.pack.js"
+      }
+    }
+  }).concat(paths.libs))
 	.pipe(gulpif(options.env === 'development', using()))
 	.pipe(concat('lib.js'))
 	.pipe(gulpif(options.env === 'production', uglify()))
@@ -83,10 +98,10 @@ gulp.task('scripts', ['bower','clean'], function() {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('all', ['html','sass','img','vendor','scripts'])
+gulp.task('all', ['html','sass','css','img','vendor','scripts'])
 gulp.task('default', ['all']);
 
 gulp.task('watch', ['all'], function() {
-  var all = paths.html.concat(paths.sass).concat(paths.img).concat(paths.scripts)
+  var all = paths.html.concat(paths.sass).concat(paths.css).concat(paths.img).concat(paths.scripts)
   gulp.watch(all, ['all']);
 });

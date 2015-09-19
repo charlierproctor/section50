@@ -17,6 +17,8 @@
     "angular-ui-router": "~0.2.15",
     "angular-ui-ace": "~0.2.3",
     "firebase": "~2.2.9",
-    "angularfire": "~1.1.2"
+    "angularfire": "~1.1.2",
+    "angular-marked": "Hypercubed/angular-marked#~0.0.21",
+    "highlightjs": "~8.8.0"
   }
 }
