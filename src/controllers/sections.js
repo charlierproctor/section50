@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('section50.sections', ['ui.router'])
+angular.module('section50.sections', ['ui.router','firebase'])
 
 .config(['$stateProvider',
 	function($stateProvider) {
@@ -17,8 +17,12 @@ angular.module('section50.sections', ['ui.router'])
 	  })
 	}])
 
-.controller('SectionCtrl',['$scope','$state',function($scope,$state,keydownService){
+.controller('SectionCtrl',['$scope','$state','$firebaseObject',function($scope,$state,$firebaseObject){
 
+	var ref = new Firebase("https://resplendent-torch-491.firebaseio.com/");
+	var obj = $firebaseObject(ref.child('sections'))
+
+	obj.$bindTo($scope, "data");
 }])
 .controller('SectionTwoCtrl',['$scope','$state',function($scope,$state,keydownService){
 
