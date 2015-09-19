@@ -29,7 +29,7 @@ var paths = {
   	'src/css/*.scss'
   ],
   css: [
-    'src/bower_components/highlightjs/styles/default.css'
+    'src/bower_components/highlightjs/styles/github.css'
   ],
   img: [
   	'src/img/**/*'
