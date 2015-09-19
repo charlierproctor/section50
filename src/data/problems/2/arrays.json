@@ -1,0 +1,13 @@
+{
+	"filename":"arrays.c",
+	"tests": [
+		{
+			"cmd":"./arrays",
+			"expected":{
+				"stderr": null,
+				"stdout": null
+			}
+
+		}
+	]
+}
