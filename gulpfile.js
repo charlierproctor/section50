@@ -34,6 +34,9 @@ var paths = {
   scripts: [
   'src/**/*.js',
   '!src/bower_components/**/*.js'
+  ],
+  libs: [
+  'src/bower_components/ace-builds/src-min-noconflict/ace.js'
   ]
 };
 
@@ -64,7 +67,7 @@ gulp.task('img', ['bower','clean'], function() {
 	.pipe(gulp.dest('dist/img'))
 })
 gulp.task('vendor', ['bower','clean'], function() {
-	return gulp.src(bowerFiles())
+	return gulp.src(bowerFiles().concat(paths.libs))
 	.pipe(gulpif(options.env === 'development', using()))
 	.pipe(concat('lib.js'))
 	.pipe(gulpif(options.env === 'production', uglify()))
