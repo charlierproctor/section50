@@ -4,6 +4,7 @@ angular.module('section50', [
   'ui.router',
   'section50.sections',
   'section50.menu',
+  'section50.sandbox50',
   'ui.ace',
   'firebase',
   'hc.marked'
