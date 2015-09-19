@@ -12,7 +12,7 @@ angular.module('section50.sections', ['ui.router','firebase'])
 	  })
 	  .state('section.2', {
 	    url: '/2',
-	    templateUrl: 'partials/2.html',
+	    templateUrl: 'partials/sections/2.html',
 	    controller: 'SectionTwoCtrl'
 	  })
 	}])
@@ -27,6 +27,7 @@ angular.module('section50.sections', ['ui.router','firebase'])
 		// login with Facebook
 		auth.$authWithOAuthPopup("google").then(function(authData) {
 			$scope.authenticated = true;
+			$scope.admin = (authData.uid === "google:104189115997275409528")
 			
 			var obj = $firebaseObject(ref.child('sections').child('2').child(authData.uid))
 			obj.$bindTo($scope, "data");
