@@ -1,0 +1,44 @@
+// CSS3 transitions with vendor prefixes
+@mixin transition($type) {
+  -webkit-transition: $type;
+  -moz-transition: $type;
+  -ms-transition: $type;
+  -o-transition: $type;
+  transition: $type;
+}
+
+// CSS3 transforms with vendor prefixes
+@mixin transform($type) {
+  -webkit-transform: $type;
+  -moz-transform: $type;
+  -ms-transform: $type;
+  -o-transform: $type;
+  transform: $type;
+}
+
+// CSS3 transitions for transforms with vendor prefixes
+@mixin transform-transition($type) {
+  -webkit-transition: -webkit-transform $type;
+  -moz-transition: -moz-transform $type;
+  -ms-transition: -ms-transform $type;
+  -o-transition: -o-transform $type;
+  transition: transform $type;
+}
+
+// CSS3 filters with vendor prefixes
+@mixin filter($type) {
+  -webkit-filter: $type;
+  -moz-filter: $type;
+  -ms-filter: $type;
+  -o-filter: $type;
+  filter: $type;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

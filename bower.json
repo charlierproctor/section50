@@ -1,0 +1,19 @@
+{
+  "name": "section50",
+  "version": "0.0.0",
+  "authors": [
+    "Charlie Proctor <charlie@charlieproctor.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "src/bower_components",
+    "dist/",
+    ".sass-cache/"
+  ],
+  "dependencies": {
+    "angular": "~1.4.2",
+    "angular-ui-router": "~0.2.15"
+  }
+}
