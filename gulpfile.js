@@ -41,6 +41,9 @@ var paths = {
   libs: [
   'src/bower_components/ace-builds/src-min-noconflict/ace.js',
   'src/bower_components/ace-builds/src-min-noconflict/mode-c_cpp.js'
+  ],
+  data: [
+  'src/data/**/*.json'
   ]
 };
 
@@ -76,6 +79,11 @@ gulp.task('img', ['bower','clean'], function() {
   .pipe(gulpif(options.env === 'development', using()))
 	.pipe(gulp.dest('dist/img'))
 })
+gulp.task('data', ['bower','clean'], function() {
+  return gulp.src(paths.data)
+  .pipe(gulpif(options.env === 'development', using()))
+  .pipe(gulp.dest('dist/data'))
+})
 gulp.task('vendor', ['bower','clean'], function() {
 	return gulp.src(bowerFiles({
     "overrides":{
@@ -98,10 +106,10 @@ gulp.task('scripts', ['bower','clean'], function() {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('all', ['html','sass','css','img','vendor','scripts'])
+gulp.task('all', ['html','sass','css','img','vendor','scripts','data'])
 gulp.task('default', ['all']);
 
 gulp.task('watch', ['all'], function() {
-  var all = paths.html.concat(paths.sass).concat(paths.css).concat(paths.img).concat(paths.scripts)
+  var all = paths.html.concat(paths.sass).concat(paths.css).concat(paths.img).concat(paths.scripts).concat(paths.data)
   gulp.watch(all, ['all']);
 });
