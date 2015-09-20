@@ -17,26 +17,17 @@ angular.module('section50.sections', ['ui.router','firebase'])
 	  })
 	}])
 
-.controller('SectionCtrl',['$scope','$state','$firebaseObject','$firebaseAuth',function($scope,$state,$firebaseObject,$firebaseAuth){
+.controller('SectionCtrl',['$scope','$state','LoginService','$rootScope',function($scope,$state,$login,$rootScope){
 
-	var ref = new Firebase("https://resplendent-torch-491.firebaseio.com/");
-
-	var auth = $firebaseAuth(ref)
-
-	$scope.authUser = function(){
-		// login with Facebook
-		auth.$authWithOAuthPopup("google").then(function(authData) {
-			$scope.authData = authData
-			$scope.authenticated = true;
-			$scope.admin = (authData.uid === "google:104189115997275409528")
-			
-			
-
-		}).catch(function(error) {
-			$scope.authenticated = false;
-		});
+	$scope.authUser = function(){ 
+		$login.authUser(function(admin, authenticated, authData){
+			$rootScope.authenticated = $login.authenticated
+			$rootScope.admin = $login.admin
+			$rootScope.authData = authData
+		})
 	}
+	
 }])
-.controller('SectionTwoCtrl',['$scope','$state',function($scope,$state,keydownService){
+.controller('SectionTwoCtrl',['$scope','$state',function($scope,$state){
 
 }])

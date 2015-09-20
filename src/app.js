@@ -6,6 +6,7 @@ angular.module('section50', [
   'section50.menu',
   'section50.sandbox50',
   'section50.editor',
+  'section50.login',
   'ui.ace',
   'firebase',
   'hc.marked'
