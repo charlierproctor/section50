@@ -59,10 +59,15 @@ $black: black;
     }
   }
   .signin {
+    position: absolute;
+    width: 100%;
+    top: 20%;
     text-align: center;
-
+    h1 {
+      font-size: 48px;
+    }
     img {
-      width: 30%;
+      width: 300px;
     }
   }
   .questions {
