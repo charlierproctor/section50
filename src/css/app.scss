@@ -65,6 +65,39 @@ $black: black;
       width: 30%;
     }
   }
+  .questions {
+    button {
+      background: $blue;
+      color: $white;
+      border: 0;
+      border-radius: 5px;
+      font-weight: bold;
+      margin: 10px;
+    }
+    button:hover {
+      background: $yellow;
+    }
+    .submit {
+      padding: 10px 15px;
+      font-size: 24px;
+      text-align: center;
+    }
+    .edit {
+      padding: 7px 10px;
+      font-size: 18px;
+      float: right;
+      display: inline;
+    }
+    .date {
+      display: inline;
+    }
+    .answer {
+      margin-left: 10%;
+    }
+    hr.answerdivide {
+      border-top: dotted 4px;
+    }
+  }
 
   .center {
     text-align: center;

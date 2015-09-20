@@ -30,18 +30,21 @@ angular.module('section50.sandbox50', [])
 	}
 
 	var run = function(homedir,cmd,cb) {
+
+		var dataHash = {
+			"cmd": cmd,
+		    "sandbox": {
+		    	"homedir": homedir
+		    }
+		}
+
 		$http({
 			method: 'POST',
 			url: 'http://run.cs50.net:80/run',
-			data: {
-			    "cmd": cmd,
-			    "sandbox": {
-			    	"homedir": homedir
-			    }
-			},
-			headers : {
-                'Content-Type' : 'application/json'
-            }
+			data: dataHash,
+			headers: {
+				'Content-Type' : 'application/json'
+			}
 		})
 		.success(function(data, status, headers, config) {
 			cb(data)

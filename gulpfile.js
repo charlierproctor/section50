@@ -40,7 +40,8 @@ var paths = {
   ],
   libs: [
   'src/bower_components/ace-builds/src-min-noconflict/ace.js',
-  'src/bower_components/ace-builds/src-min-noconflict/mode-c_cpp.js'
+  'src/bower_components/ace-builds/src-min-noconflict/mode-c_cpp.js',
+  'src/bower_components/ace-builds/src-min-noconflict/mode-markdown.js'
   ],
   data: [
   'src/data/**/*.json',
