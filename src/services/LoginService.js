@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('section50.login', [])
-.factory('LoginService', ['$firebaseAuth',function($firebaseAuth){
+.factory('LoginService', ['$firebaseAuth','$firebaseObject',function($firebaseAuth,$firebaseObject){
 
 	var authUser = function(cb){
 		
@@ -10,6 +10,12 @@ angular.module('section50.login', [])
 
 		// login with Google
 		auth.$authWithOAuthPopup("google").then(function(authData) {
+
+			var obj = $firebaseObject(ref.child('users').child(authData.uid))
+			obj.$value = {
+				name: authData.google.displayName
+			}
+			obj.$save()
 
 			var admin = (authData.uid === "google:104189115997275409528")
 			cb(authData, true, admin)
