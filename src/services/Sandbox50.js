@@ -40,11 +40,8 @@ angular.module('section50.sandbox50', [])
 
 		$http({
 			method: 'POST',
-			url: 'http://run.cs50.net:80/run',
-			data: dataHash,
-			headers: {
-				'Content-Type' : 'application/json'
-			}
+			url: '/run',
+			data: dataHash
 		})
 		.success(function(data, status, headers, config) {
 			cb(data)
