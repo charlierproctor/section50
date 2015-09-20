@@ -4,6 +4,7 @@ angular.module('section50', [
   'ui.router',
   'section50.splash',
   'section50.sections',
+  'section50.questions',
   'section50.menu',
   'section50.sandbox50',
   'section50.editor',

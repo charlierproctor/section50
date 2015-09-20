@@ -1,0 +1,9 @@
+<div class="questions">
+	<input type="text" ng-model="questiontext">
+	<button ng-click="newQuestion()">Submit</button>
+
+	<div ng-repeat="question in questions">
+		{{question.text}}
+		{{question.date | date:'MM/dd @ h:mma'}}
+	</div>
+</div>
