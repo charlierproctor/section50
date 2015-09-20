@@ -18,13 +18,8 @@ angular.module('section50.sections', ['ui.router','firebase'])
 	}])
 
 .controller('SectionCtrl',['$scope','$state','LoginService','$rootScope',function($scope,$state,$login,$rootScope){
-
-	$scope.authUser = function(){ 
-		$login.authUser(function(admin, authenticated, authData){
-			$rootScope.authenticated = $login.authenticated
-			$rootScope.admin = $login.admin
-			$rootScope.authData = authData
-		})
+	if (!$rootScope.authenticated){
+		$state.go('splash')
 	}
 	
 }])

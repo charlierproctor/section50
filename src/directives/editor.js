@@ -7,23 +7,47 @@ angular.module('section50.editor',[])
 		restrict: 'E',
 		link: function(scope,elem,attrs){
 
-			var ref = new Firebase("https://resplendent-torch-491.firebaseio.com/");
-			var obj = $firebaseObject(ref.child('sections').child(attrs["section"])
-				.child(attrs["uid"])).child(attrs["problem"])
-			obj.$bindTo(scope, "problem");
+			if (attrs["uid"]) {
+				var ref = new Firebase("https://resplendent-torch-491.firebaseio.com/")
+				.child('sections').child(attrs["section"]).child(attrs["uid"]).child(attrs["problem"])
 
-			$http.get('data/problems/' + attrs['section'] + '/' + attrs['problem'] + attrs['.c'])
-			.success(function(data, status, headers, config) {
-				scope.problem.text = data;
-				console.log(data)
-		  	});
+				var obj = $firebaseObject(ref)
 
-			$http.get('data/problems/' + attrs['section'] + '/' + attrs['problem'] + attrs['.json'])
-			.success(function(data, status, headers, config) {
-				scope.problem.filename = data.filename;
-				scope.problem.tests = data.tests;
-		  	});
+				scope.problem = {}
 
+				var cpath = 'data/problems/' + attrs['section'] + '/' + attrs['problem'] + '.c'
+
+				// grab the c boilerplate
+				$http.get(cpath)
+				.success(function(data, status, headers, config) {
+					obj.$loaded().then(function(){
+
+						// establish three-way data binding
+						obj.$bindTo(scope,"problem")
+
+						// no text yet... load boilerplate
+						if (!obj.$value || obj.$value == "") {
+							obj.$value = {
+								text: data
+							}
+							obj.$save()
+						} 
+					})
+				});
+
+
+				var filename, tests
+				var jsonpath = 'data/problems/' + attrs['section'] + '/' + attrs['problem'] + '.json'
+				$http.get(jsonpath)
+				.success(function(data, status, headers, config) {
+					filename = data.filename;
+					tests = data.tests;
+			  	});
+			}
+
+		},
+		scope: {
+			problem: '='
 		}
 	}
 }])

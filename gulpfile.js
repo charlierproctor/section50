@@ -43,7 +43,8 @@ var paths = {
   'src/bower_components/ace-builds/src-min-noconflict/mode-c_cpp.js'
   ],
   data: [
-  'src/data/**/*.json'
+  'src/data/**/*.json',
+  'src/data/**/*.c'
   ]
 };
 
