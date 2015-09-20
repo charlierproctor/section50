@@ -64,5 +64,92 @@
 
 	</marked>
 
+	<!-- TODO: teams here. -->
 	<editor section="2" problem="arrays" uid="{{authData.uid}}" name="{{name}}"></editor>
+
+	<marked>
+		## Strings
+
+		Although we can use the `string` declaration to declare strings, `strings` are really just arrays of characters.
+
+		- `string` and `char[]` are exactly equivalent!
+			- Where could I go to see this?
+		- If I declare a `string s = "Section50"`, I can access the letters:
+
+			```c 
+			s[0] = 'S';
+			s[1] = 'e';
+			```
+
+		- If I attempt to access the letter one past the end, I'll get the null terminating character, `\0`.
+
+		### Let's try it!
+
+		1. Create a `string` of your team's name. 
+		2. Print it out, letter by letter.
+	</marked>
+
+	<!-- TODO: teams here. -->
+	<editor section="2" problem="letters" uid="{{authData.uid}}" name="{{name}}"></editor>
+
+	<marked>
+		## Functions
+
+		- Functions take in `[parameters]`, do something `[methods]`, and spit out an answer `[return value]`.
+		- Why do we want functions?
+		- We've already seen one: `int main(void)`
+			- `int` is the return type
+			- `main` is the function name
+			- `void` is the parameter, which in this case is nothing
+
+		### Let's try it!
+
+		1. Create a function `printer` that prints whatever you pass to it. 
+	</marked>
+
+	<!-- TODO: teams here. -->
+	<editor section="2" problem="functions" uid="{{authData.uid}}" name="{{name}}"></editor>
+
+	<marked>
+		## Command-Line Arguments
+
+		- command line arguments allow you to pass arguments into a program
+		- So now `int main(void)` becomes `int main(int argc, char* argv[])`
+			- `argc` is the number of arguments passed to the program
+			- `argv[]` is an array of strings, or `char *`'s that were passed to the program
+
+			```bash
+			charlie@ide50:~/workspace $ ./mario 8
+			```
+
+			- What are `argc` and `argv`?
+
+		- You can treat these arguments as a multidimensional array, eg. `argv[0][2]`.
+
+		### Let's try it!
+
+		1. Take in a string **from the command line**.
+		2. Print out every other letter.
+	</marked>
+
+	<!-- TODO: teams here. -->
+	<editor section="2" problem="commandline" uid="{{authData.uid}}" name="{{name}}"></editor>
+
+	<marked>
+		## PSet Review
+
+		- Crypto this week!
+			- User inputs how many positions to rotate characters in target word.
+
+			```bash
+			charlie@ide50:~/workspace $ ./caesar 1
+			Charlie
+			Dibsmjf
+			```
+
+		- All command line arguments are strings!
+			- use `atoi()`
+		- Be careful about rotating too far. (`%` hint, hint...)
+		- Vigenere: in place of an `int`, you'll use a `string` to encrypt the target word.
+	</marked>
 </div>
