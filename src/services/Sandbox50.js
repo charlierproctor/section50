@@ -4,9 +4,24 @@ angular.module('section50.sandbox50', [])
 .factory('Sandbox50Service', ['$http',function($http){
 
 	var upload = function(filename,data,cb){
-		$http.post('http://run.cs50.net:80/upload', {
-			filename: data
-		})
+
+		var dataHash = {}
+		dataHash[filename] = data 
+
+		$http({
+			method: 'post',
+			url: 'http://run.cs50.net:80/upload', 
+			transformRequest: function(obj) {
+		        var str = [];
+		        for(var p in obj)
+		        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+		        return str.join("&");
+		    },
+		    data: dataHash,
+			headers : {
+                'Content-Type' : 'application/x-www-form-urlencoded'
+            }
+        })
 		.success(function(data, status, headers, config) {
 			cb(data)
 	  	});

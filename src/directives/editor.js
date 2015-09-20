@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('section50.editor',[])
-.directive('editor', ['$firebaseObject','$http',function($firebaseObject,$http){
+.directive('editor', ['$firebaseObject','$http','Sandbox50Service',function($firebaseObject,$http,$sandbox){
 	return {
 		templateUrl: 'partials/editor.html',
 		restrict: 'E',
@@ -43,11 +43,18 @@ angular.module('section50.editor',[])
 					filename = data.filename;
 					tests = data.tests;
 			  	});
+
+			  	scope.run = function(){
+					$sandbox.upload(filename,scope.problem.text,function(res){
+						console.log(res)
+					})
+				}
 			}
 
 		},
 		scope: {
-			problem: '='
+			problem: '=',
+			run: '='
 		}
 	}
 }])
