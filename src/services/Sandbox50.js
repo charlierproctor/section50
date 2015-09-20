@@ -29,14 +29,7 @@ angular.module('section50.sandbox50', [])
 	  	});
 	}
 
-	var run = function(homedir,cmd,cb) {
-
-		var dataHash = {
-			"cmd": cmd,
-		    "sandbox": {
-		    	"homedir": homedir
-		    }
-		}
+	var runHelper = function(dataHash,cb) {
 
 		$http({
 			method: 'POST',
@@ -47,9 +40,29 @@ angular.module('section50.sandbox50', [])
 			cb(data)
 	  	});
 	}
+
+	var run = function(homedir,cmd,cb) {
+		var dataHash = {
+			"cmd": cmd,
+		    "sandbox": {
+		    	"homedir": homedir
+		    }
+		}
+		runHelper(dataHash,cb);
+	}
+	var runAgain = function(sandbox,cmd,cb) {
+		var dataHash = {
+			"cmd": cmd,
+		    "sandbox": sandbox
+		}
+		console.log(dataHash)
+		runHelper(dataHash,cb);
+	}
+
   	return {
   		upload: upload,
-  		run: run
+  		run: run,
+  		runAgain: runAgain
   	}
 }])
 
