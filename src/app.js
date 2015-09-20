@@ -8,6 +8,7 @@ angular.module('section50', [
   'section50.menu',
   'section50.editor',
   'section50.login',
+  'section50.present',
   'ui.ace',
   'firebase',
   'hc.marked'

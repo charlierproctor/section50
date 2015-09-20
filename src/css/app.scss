@@ -112,4 +112,14 @@ $black: black;
     height: 200px;
     width: 100%;
   }
+
+  .users {
+    position: absolute;
+    width: 100%;
+    top: 10%;
+    text-align: center;
+    h1 {
+      font-size: 48px;
+    }
+  }
 }
