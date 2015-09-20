@@ -7,7 +7,8 @@
 int main(void)
 {
 	// grab a string from the command line.
-	string s = GetString()
+	printf("Please give me a string: ");
+	string s = GetString();
 
 	// call the printer function
 	printer(s);
