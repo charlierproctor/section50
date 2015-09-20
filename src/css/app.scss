@@ -56,6 +56,9 @@ $black: black;
     margin: 5% 10% 0 20%;
     marked {
       font-size: 20px;
+      code {
+        font-size: 24px;
+      }
     }
   }
   .signin {
@@ -109,8 +112,9 @@ $black: black;
   }
 
   .editor {
-    height: 200px;
+    height: 300px;
     width: 100%;
+    font-size: 14px;
   }
 
   .users {

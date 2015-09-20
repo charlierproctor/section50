@@ -3,6 +3,9 @@
 
 int main(void)
 {
-	int section[17];
-	printf("hey there\n");
+	// Create an array with the names of three people from section. 
+
+	// Loop over those names, printing them out to the command line. 
+	// Make sure to add a \n after each!
+
 }

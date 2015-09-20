@@ -9,7 +9,7 @@ angular.module('section50.editor',[])
 
 			if (attrs["uid"]) {
 				var ref = new Firebase("https://resplendent-torch-491.firebaseio.com/")
-				.child('sections').child(attrs["section"]).child(attrs["uid"]).child(attrs["problem"])
+				.child('sections').child(attrs["section"]).child(attrs["problem"]).child(attrs["uid"])
 
 				var obj = $firebaseObject(ref)
 
@@ -28,7 +28,8 @@ angular.module('section50.editor',[])
 						// no text yet... load boilerplate
 						if (!obj.$value || obj.$value == "") {
 							obj.$value = {
-								text: data
+								text: data,
+								name: attrs["name"]
 							}
 							obj.$save()
 						} 

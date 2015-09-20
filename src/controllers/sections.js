@@ -23,6 +23,6 @@ angular.module('section50.sections', ['ui.router','firebase'])
 	}
 	
 }])
-.controller('SectionTwoCtrl',['$scope','$state',function($scope,$state){
-
+.controller('SectionTwoCtrl',['$scope','$state','$rootScope',function($scope,$state,$rootScope){
+	$scope.name = $rootScope.authData.google.displayName
 }])

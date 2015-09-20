@@ -1,0 +1,6 @@
+<div class="solutions">
+	<select ng-model="selected">
+	  <option ng-repeat="solution in solutions" value="{{solution.$id}}">{{solution.name}}</option>
+	</select>
+	<div ui-ace="{ mode:'c_cpp' }" ng-model="solutions.$getRecord(selected).text" class="editor" readonly></div>
+</div>

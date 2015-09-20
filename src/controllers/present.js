@@ -15,6 +15,11 @@ angular.module('section50.present', ['ui.router','firebase'])
 	    templateUrl: 'partials/present/users.html',
 	    controller: 'PresentUsersCtrl'
 	  })
+	  .state('present.solutions', {
+	  	url: '/solutions/:num/:name',
+	  	templateUrl: 'partials/present/solutions.html',
+	    controller: 'PresentSolutionsCtrl'
+	  })
 	}])
 
 .controller('PresentCtrl',['$scope','$state','LoginService','$rootScope',function($scope,$state,$login,$rootScope){
@@ -27,4 +32,10 @@ angular.module('section50.present', ['ui.router','firebase'])
 	var ref = new Firebase("https://resplendent-torch-491.firebaseio.com/").child('users')
 
 	$scope.users = $firebaseArray(ref)
+}])
+.controller('PresentSolutionsCtrl',['$scope','$state','$firebaseArray','$stateParams',function($scope,$state,$firebaseArray,$stateParams){
+	var ref = new Firebase("https://resplendent-torch-491.firebaseio.com/")
+	.child('sections').child($stateParams.num).child($stateParams.name)
+
+	$scope.solutions = $firebaseArray(ref)
 }])
