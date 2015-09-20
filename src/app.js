@@ -5,10 +5,11 @@ angular.module('section50', [
   'section50.splash',
   'section50.sections',
   'section50.questions',
+  'section50.contact',
+  'section50.present',
+  'section50.login',
   'section50.menu',
   'section50.editor',
-  'section50.login',
-  'section50.present',
   'ui.ace',
   'firebase',
   'hc.marked'
