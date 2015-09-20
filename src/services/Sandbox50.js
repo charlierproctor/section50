@@ -3,20 +3,22 @@
 angular.module('section50.sandbox50', [])
 .factory('Sandbox50Service', ['$http',function($http){
 
+	var transformRequest = function(obj) {
+	    var str = [];
+	    for(var p in obj)
+	    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+	    return str.join("&");
+	}
+
 	var upload = function(filename,data,cb){
 
 		var dataHash = {}
 		dataHash[filename] = data 
 
 		$http({
-			method: 'post',
+			method: 'POST',
 			url: 'http://run.cs50.net:80/upload', 
-			transformRequest: function(obj) {
-		        var str = [];
-		        for(var p in obj)
-		        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-		        return str.join("&");
-		    },
+			transformRequest: transformRequest,
 		    data: dataHash,
 			headers : {
                 'Content-Type' : 'application/x-www-form-urlencoded'
@@ -28,11 +30,18 @@ angular.module('section50.sandbox50', [])
 	}
 
 	var run = function(homedir,cmd,cb) {
-		$http.post('http://run.cs50.net:80/run', {
-		    "cmd": cmd,
-		    "sandbox": {
-		    	"homedir": homedir
-		    }
+		$http({
+			method: 'POST',
+			url: 'http://run.cs50.net:80/run',
+			data: {
+			    "cmd": cmd,
+			    "sandbox": {
+			    	"homedir": homedir
+			    }
+			},
+			headers : {
+                'Content-Type' : 'application/json'
+            }
 		})
 		.success(function(data, status, headers, config) {
 			cb(data)

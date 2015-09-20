@@ -45,8 +45,11 @@ angular.module('section50.editor',[])
 			  	});
 
 			  	scope.run = function(){
-					$sandbox.upload(filename,scope.problem.text,function(res){
-						console.log(res)
+					$sandbox.upload(filename,scope.problem.text,function(uploadRes){
+						console.log(uploadRes)
+						$sandbox.run(uploadRes.id,'make ' + filename,function(runRes){
+							console.log(runRes)
+						})
 					})
 				}
 			}

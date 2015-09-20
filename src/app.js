@@ -12,8 +12,8 @@ angular.module('section50', [
   'firebase',
   'hc.marked'
 ]).
-config(['$stateProvider','$urlRouterProvider','markedProvider',
-	function($stateProvider,$urlRouterProvider,markedProvider) {
+config(['$stateProvider','$urlRouterProvider','markedProvider','$httpProvider',
+	function($stateProvider,$urlRouterProvider,markedProvider,$httpProvider) {
 		$urlRouterProvider.otherwise("/");
 		markedProvider.setOptions({
 			gfm: true,
