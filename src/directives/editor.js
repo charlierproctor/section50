@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('section50.editor',[])
-.directive('editor', ['$firebaseObject','$http','Sandbox50Service',function($firebaseObject,$http,$sandbox){
+.directive('editor', ['$firebaseObject','$http',function($firebaseObject,$http){
 	return {
 		templateUrl: 'partials/editor.html',
 		restrict: 'E',
@@ -35,29 +35,11 @@ angular.module('section50.editor',[])
 					})
 				});
 
-
-				var filename, tests
-				var jsonpath = 'data/problems/' + attrs['section'] + '/' + attrs['problem'] + '.json'
-				$http.get(jsonpath)
-				.success(function(data, status, headers, config) {
-					filename = data.filename;
-					tests = data.tests;
-			  	});
-
-			  	scope.run = function(){
-					$sandbox.upload(filename,scope.problem.text,function(uploadRes){
-						console.log(uploadRes)
-						$sandbox.run(uploadRes.id,'make ' + filename,function(runRes){
-							console.log(runRes)
-						})
-					})
-				}
 			}
 
 		},
 		scope: {
-			problem: '=',
-			run: '='
+			problem: '='
 		}
 	}
 }])

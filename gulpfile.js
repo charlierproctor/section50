@@ -44,7 +44,6 @@ var paths = {
   'src/bower_components/ace-builds/src-min-noconflict/mode-markdown.js'
   ],
   data: [
-  'src/data/**/*.json',
   'src/data/**/*.c'
   ]
 };
