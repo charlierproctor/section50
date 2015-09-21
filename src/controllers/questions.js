@@ -16,7 +16,7 @@ angular.module('section50.questions', ['ui.router','firebase'])
 	if (!$rootScope.authenticated){
 		$state.go('splash')
 	} else {
-		var ref = new Firebase("https://resplendent-torch-491.firebaseio.com/").child('questions').child($stateParams.num || 2)
+		var ref = new Firebase("https://resplendent-torch-491.firebaseio.com/").child('questions').child($stateParams.num || 3)
 		$scope.questions = $firebaseArray(ref)
 
 		$scope.uid = $rootScope.authData.uid
