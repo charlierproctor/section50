@@ -39,6 +39,8 @@ void orderPizza(int number) {
 }
 ```
 
+[Download here](/data/problems/2/pizza.c)
+
 ---------------
 
 ```c
