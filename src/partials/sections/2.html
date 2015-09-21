@@ -17,7 +17,6 @@
 		### What is section?
  
 		- "sections provide you with opportunities to explore the course's material in a more intimate environment as well as to dive into hands-on activities"
-		- You'll get the most out of section if you've watched the lectures and read the pset spec ahead of time.
 
 		### Resources
 
@@ -40,7 +39,6 @@
 		```c
 		&lt;data type&gt; &lt;name&gt;[&lt;size&gt;];
 		int score[5];
-		char alpha[26];
 		```
 
 		To put values in the array:
@@ -102,6 +100,7 @@
 			```c 
 			s[0] = 'S';
 			s[1] = 'e';
+			s[9] = '\0';
 			```
 
 		- If I attempt to access the letter one past the end, I'll get the null terminating character, `\0`.
@@ -139,10 +138,10 @@
 
 		```c 
 		// this is my prototype -- must appear before `useful` is called.
-		int orderPizza(int number);
+		void orderPizza(int number);
 
 		// print the number of pizzas ordered.
-		int orderPizza(int number) {
+		void orderPizza(int number) {
 		    printf("You ordered %i pizzas.\n", number);
 		}
 		```
@@ -154,15 +153,15 @@
 		```c
 		// GOOD
 
-		int orderPizza(int number);
+		void orderPizza(int number);
 
 		int main(void){
-			string num = 15;
+			int num = 15;
 			orderPizza(num);
 		}
 
 		// we pass in the number of pizzas we want
-		int orderPizza(int number) {
+		void orderPizza(int number) {
 			// `number` passed in as argument
 			printf("You ordered %i pizzas.\n", number);
 		}
@@ -173,15 +172,15 @@
 		```c
 		// BAD
 
-		int orderPizza();
+		void orderPizza();
 
 		int main(void){
-			string num = 15;
+			int num = 15;
 			orderPizza();
 		}
 
 		// we don't pass anything in
-		int orderPizza() {
+		void orderPizza() {
 			// `num` is not accessible here!!
 			printf("You ordered %i pizzas.\n", num);
 		}
@@ -213,9 +212,10 @@
 			charlie@ide50:~/workspace $ ./mario 8
 			```
 
-			- What are `argc` and `argv`?
+			- `argc = 2`
+			- `argv = { "./mario", "8" }`
 
-		- You can treat these arguments as a multidimensional array, eg. `argv[0][2]`.
+		- You can treat these arguments as a multidimensional array, eg. `argv[0][2]` access the third character in the first word (`m`).
 
 		### Let's try it!
 
