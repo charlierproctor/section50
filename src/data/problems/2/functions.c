@@ -2,7 +2,9 @@
 #include <cs50.h>
 
 // Create a function `printer` that prints whatever you pass to it. 
-
+void printer(string str) {
+	printf("%s",str);
+}
 
 int main(void)
 {
