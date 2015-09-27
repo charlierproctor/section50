@@ -61,6 +61,9 @@ $black: black;
       }
     }
   }
+  .section {
+    margin-bottom: 300px;
+  }
   .signin {
     position: absolute;
     width: 100%;
@@ -116,7 +119,7 @@ $black: black;
   }
 
   .ace_editor { 
-    height: 300px;
+    height: 500px;
     width: 100%;
     font-size: 14px;
   }
