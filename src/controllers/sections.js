@@ -15,6 +15,11 @@ angular.module('section50.sections', ['ui.router','firebase'])
 	    templateUrl: 'partials/sections/2.html',
 	    controller: 'SectionTwoCtrl'
 	  })
+	  .state('section.3', {
+	    url: '/3',
+	    templateUrl: 'partials/sections/3.html',
+	    controller: 'SectionThreeCtrl'
+	  })
 	}])
 
 .controller('SectionCtrl',['$scope','$state','LoginService','$rootScope',function($scope,$state,$login,$rootScope){
@@ -43,5 +48,11 @@ angular.module('section50.sections', ['ui.router','firebase'])
 		// }
 
 		// $scope.teams = $firebaseArray(ref)
+
+}])
+.controller('SectionThreeCtrl',['$scope','$state','$rootScope','$firebaseObject','$firebaseArray',
+	function($scope,$state,$rootScope,$firebaseObject,$firebaseArray){
+
+		$scope.name = $rootScope.authData.google.displayName
 
 }])
