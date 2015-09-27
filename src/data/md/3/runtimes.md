@@ -9,7 +9,7 @@
 
 | Algorithm 		| O(n) 		| &#937;(n) |
 |-------------------|-----------|-----------|
-| Merge Sort		| n log(n)	| n log(n)	|
-| Selection Sort 	| n^2 		| n^2		|
-| Insertion Sort 	| n^2 		| n 		|
-| Bubble Sort 		| n^2 		| n 		|
+| Selection Sort 	| `n^2` 	| `n^2`		|
+| Insertion Sort 	| `n^2` 	| `n` 		|
+| Bubble Sort 		| `n^2` 	| `n` 		|
+| Merge Sort		| `n log(n)`| `n log(n)`|
