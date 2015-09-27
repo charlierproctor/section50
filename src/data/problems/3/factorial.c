@@ -16,7 +16,7 @@ int main(int argc, char **argv) {
 int factorial(int n) {
 	if (n < 2) {
 		// base case -- return 1
-		return n;
+		return 1;
 	} else {
 		// recursive case -- return n * (n-1)!
 		int res = factorial(n-1);
