@@ -3,8 +3,8 @@
 
 int roundDown(int x);
 
-int main(void)
-{
+int main(void) {
+	
     // grab a positive integer from the user.
 	printf("Enter a positive value for x: ");
 	int x = GetInt();
