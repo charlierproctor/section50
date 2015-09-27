@@ -138,4 +138,19 @@ $black: black;
       font-size: 32px;
     }
   }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  td, th {
+      border: 2px solid $black;
+      padding: 8px 25px 8px 25px;
+  }
+
+  th {
+      text-align: center;
+      background-color: $black;
+      color: $blue;
+  }
 }

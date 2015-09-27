@@ -19,6 +19,7 @@ config(['$stateProvider','$urlRouterProvider','markedProvider','$httpProvider',
 		$urlRouterProvider.otherwise("/");
 		markedProvider.setOptions({
 			gfm: true,
+      tables: true,
 			highlight: function (code) {
 				return hljs.highlightAuto(code).value;
 			}
