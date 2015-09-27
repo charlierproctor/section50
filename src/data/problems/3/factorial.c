@@ -8,7 +8,7 @@ int main(int argc, char **argv) {
 	printf("Enter a positive value for n: ");
 	int n = GetInt();
 
-    // call roundDown and print the result.
+    // call factorial and print the result.
 	printf("factorial(n) = %d\n", factorial(n));
 }
 
