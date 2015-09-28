@@ -16,6 +16,7 @@ int main(void) {
 // round to the nearest power of two less than or equal to x
 int roundDown(int x) {
     int smaller = 1;
+    
 	while (smaller <= x >> 1) {
 		smaller = smaller << 1;
 	}

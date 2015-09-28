@@ -29,3 +29,5 @@ This is an example of [recursion](https://study.cs50.net/recursion): the `factor
 ### Let's try an example: roundDown(x)
 
 `int roundDown(int x)` is supposed to return the nearest power of two less than or equal to `x`. But it doesn't... Try to fix it!
+
+For the curious, [here's the corrected version](/data/problems/3/corrected.c).

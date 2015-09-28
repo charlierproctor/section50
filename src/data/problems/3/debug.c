@@ -14,6 +14,7 @@ int main(void) {
 }
 
 // round to the nearest power of two less than or equal to x
+// TODO: doesn't work properly --> try to fix it!
 int roundDown(int x) {
 	int smaller = 1;
     
