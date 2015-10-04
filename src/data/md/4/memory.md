@@ -24,16 +24,23 @@ int *ptr = malloc(sizeof(int))
 - the heap can be used to store data, it can be passed between functions, and unlike stack variables, it won’t be lost when a function returns.
 - must use `free()` to unallocate this space when you're done, otherwise you're program will leak memory.
 
+### Example
+
 ```c 
-int* ptr = malloc(sizeof(int));
-*ptr = GetInt();
-if (*ptr <= 0)
-{
-    free(ptr);
-}
-else
-{
-    printf("That was a positive number!\n");
-}
-free(ptr);
+// malloc for a new array
+char* arr = malloc(5 * sizeof(char));
+
+// set the values of this array
+arr[0] = 'C';
+arr[1] = 'S';
+arr[2] = '5';
+arr[3] = '0';
+arr[4] = '\0';
+
+// free it!
+free(arr);
 ```
+
+<a href="data/problems/4/malloc.c" target="_blank">Download the full example here.</a>
+
+For the curious, take a look at how <a href="data/problems/4/cs50.c" target="_blank">cs50.c</a> implements the `GetString()` method.

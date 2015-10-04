@@ -39,7 +39,7 @@ ptr_x = ptr_y;
 x = (*ptr_y) * (*ptr_z);
 ```
 
-Check your answer with <a href="data/problems/4/pointers.c">pointers.c</a>
+Check your answer with <a href="data/problems/4/pointers.c" target="_blank">pointers.c</a>
 
 ### Arrays
 
