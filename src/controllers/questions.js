@@ -16,6 +16,7 @@ angular.module('section50.questions', ['ui.router','firebase'])
 	if (!$rootScope.authenticated){
 		$state.go('splash')
 	} else {
+		// TODO: this defaults to section 3.
 		var ref = new Firebase("https://resplendent-torch-491.firebaseio.com/").child('questions').child($stateParams.num || 3)
 		$scope.questions = $firebaseArray(ref)
 

@@ -20,6 +20,11 @@ angular.module('section50.sections', ['ui.router','firebase'])
 	    templateUrl: 'partials/sections/3.html',
 	    controller: 'SectionThreeCtrl'
 	  })
+	  .state('section.4', {
+	    url: '/4',
+	    templateUrl: 'partials/sections/4.html',
+	    controller: 'SectionFourCtrl'
+	  })
 	}])
 
 .controller('SectionCtrl',['$scope','$state','LoginService','$rootScope',function($scope,$state,$login,$rootScope){
@@ -32,26 +37,15 @@ angular.module('section50.sections', ['ui.router','firebase'])
 	function($scope,$state,$rootScope,$firebaseObject,$firebaseArray){
 
 		$scope.name = $rootScope.authData.google.displayName
-		// $scope.hasteam = false
-
-		// var ref = new Firebase("https://resplendent-torch-491.firebaseio.com/").child('teams')
-		// $scope.newTeam = function(){
-		// 	var newref = ref.push()
-		// 	var obj = $firebaseObject(newref)
-		// 	obj.$value = {
-		// 		name : $scope.teamname
-		// 	}
-		// 	obj.$save()
-
-		// 	$scope.hasteam = true
-		// 	$scope.teamuid = obj.$key
-		// }
-
-		// $scope.teams = $firebaseArray(ref)
 
 }])
 .controller('SectionThreeCtrl',['$scope','$state','$rootScope','$firebaseObject','$firebaseArray',
 	function($scope,$state,$rootScope,$firebaseObject,$firebaseArray){
+
+		$scope.name = $rootScope.authData.google.displayName
+
+}])
+.controller('SectionFourCtrl',['$scope','$state','$rootScope', function($scope,$state,$rootScope){
 
 		$scope.name = $rootScope.authData.google.displayName
 
