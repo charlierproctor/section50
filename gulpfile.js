@@ -45,7 +45,9 @@ var paths = {
   ],
   data: [
   'src/data/**/*.c',
-  'src/data/**/*.md'
+  'src/data/**/*.md',
+  'src/data/**/*.png',
+  'src/data/**/*.jpg'
   ]
 };
 

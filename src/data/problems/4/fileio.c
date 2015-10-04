@@ -7,6 +7,6 @@ int main(int argc, const char *argv[]){
 	printf("Please enter your name: ");
 	string name = GetString();
 
-	// TODO: print "Hi NAME!" to the file name.txt.
+	// TODO: print "Hi NAME!" to the file output.txt
 
 }
