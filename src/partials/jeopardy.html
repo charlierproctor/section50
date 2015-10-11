@@ -1,0 +1,17 @@
+<table>
+	<!-- <thead>
+		<tr>
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+	</thead> -->
+	<tbody>
+		<tr ng-repeat="row in [100,200,300,400,500]">
+			<td ng-repeat="col in [0,1,2,3,4]">
+				<a ng-click="show(row,col)" href="#">{{row}}</a>
+			</td>
+		</tr>
+	</tbody>
+</table>

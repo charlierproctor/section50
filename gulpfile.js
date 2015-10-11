@@ -29,7 +29,9 @@ var paths = {
   	'src/css/*.scss'
   ],
   css: [
-    'src/bower_components/highlightjs/styles/github.css'
+    'src/bower_components/highlightjs/styles/github.css',
+    'src/bower_components/ng-dialog/css/ngDialog.css',
+    'src/bower_components/ng-dialog/css/ngDialog-theme-default.css'
   ],
   img: [
   	'src/img/**/*'
@@ -93,6 +95,9 @@ gulp.task('vendor', ['bower','clean'], function() {
     "overrides":{
       "highlightjs": {
         "main":"highlight.pack.js"
+      },
+      "ng-dialog":{
+        "main":"js/ngDialog.js"
       }
     }
   }).concat(paths.libs))

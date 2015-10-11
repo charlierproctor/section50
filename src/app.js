@@ -10,9 +10,11 @@ angular.module('section50', [
   'section50.login',
   'section50.menu',
   'section50.editor',
+  'section50.jeopardy',
   'ui.ace',
   'firebase',
-  'hc.marked'
+  'hc.marked',
+  'ngDialog'
 ]).
 config(['$stateProvider','$urlRouterProvider','markedProvider','$httpProvider',
 	function($stateProvider,$urlRouterProvider,markedProvider,$httpProvider) {
