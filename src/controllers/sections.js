@@ -35,6 +35,11 @@ angular.module('section50.sections', ['ui.router','firebase'])
 	    templateUrl: 'partials/sections/5.jeopardy.html',
 	    controller: 'JeopardyFiveCtrl'
 	  })
+	  .state('section.6', {
+	    url: '/6',
+	    templateUrl: 'partials/sections/6.html',
+	    controller: 'SectionSixCtrl'
+	  })
 	}])
 
 .controller('SectionCtrl',['$scope','$state','LoginService','$rootScope',function($scope,$state,$login,$rootScope){
@@ -70,6 +75,11 @@ angular.module('section50.sections', ['ui.router','firebase'])
 
 }])
 .controller('JeopardyFiveCtrl',['$scope','$state','$rootScope', function($scope,$state,$rootScope){
+
+		$scope.name = $rootScope.authData.google.displayName
+
+}])
+.controller('SectionSixCtrl',['$scope','$state','$rootScope', function($scope,$state,$rootScope){
 
 		$scope.name = $rootScope.authData.google.displayName
 
