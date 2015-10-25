@@ -1,1 +1,0 @@
-Now let's sketch out some pseudocode for `check()`

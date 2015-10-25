@@ -1,1 +1,0 @@
-Finally, let's write a hash function!
