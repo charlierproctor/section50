@@ -19,7 +19,7 @@ angular.module('section50.splash', ['ui.router'])
 			$rootScope.authData = authData
 			console.log(authData)
 			if (authenticated) {
-				$state.go('section.6')
+				$state.go('section.7')
 			}
 		})
 	}
