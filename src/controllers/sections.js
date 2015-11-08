@@ -50,6 +50,11 @@ angular.module('section50.sections', ['ui.router','firebase'])
 	    templateUrl: 'partials/sections/8.html',
 	    controller: 'SectionEightCtrl'
 	  })
+	  .state('section.9', {
+	    url: '/9',
+	    templateUrl: 'partials/sections/9.html',
+	    controller: 'SectionNineCtrl'
+	  })
 	}])
 
 .controller('SectionCtrl',['$scope','$state','LoginService','$rootScope',function($scope,$state,$login,$rootScope){
