@@ -109,3 +109,8 @@ angular.module('section50.sections', ['ui.router','firebase'])
 		$scope.name = $rootScope.authData.google.displayName
 
 }])
+.controller('SectionNineCtrl',['$scope','$state','$rootScope', function($scope,$state,$rootScope){
+
+		$scope.name = $rootScope.authData.google.displayName
+
+}])
