@@ -1,0 +1,6 @@
+#!/usr/bin/python
+
+for i in xrange(1,6):
+	for j in xrange(5):
+		ques = open("{0}.{1}.md".format(str(100*i),str(j)),"w")
+		ques.close()
