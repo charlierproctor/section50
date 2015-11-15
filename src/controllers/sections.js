@@ -55,6 +55,16 @@ angular.module('section50.sections', ['ui.router','firebase'])
 	    templateUrl: 'partials/sections/9.html',
 	    controller: 'SectionNineCtrl'
 	  })
+	  .state('section.10', {
+	    url: '/10',
+	    templateUrl: 'partials/sections/10.html',
+	    controller: 'SectionTenCtrl'
+	  })
+	  .state('section.jeopardy10', {
+	    url: '/jeopardy10',
+	    templateUrl: 'partials/sections/10.jeopardy.html',
+	    controller: 'JeopardyTenCtrl'
+	  })
 	}])
 
 .controller('SectionCtrl',['$scope','$state','LoginService','$rootScope',function($scope,$state,$login,$rootScope){
@@ -110,6 +120,20 @@ angular.module('section50.sections', ['ui.router','firebase'])
 
 }])
 .controller('SectionNineCtrl',['$scope','$state','$rootScope', function($scope,$state,$rootScope){
+
+		$scope.name = $rootScope.authData.google.displayName
+
+}])
+.controller('SectionTenCtrl',['$scope','$state','$rootScope', function($scope,$state,$rootScope){
+
+		$scope.name = $rootScope.authData.google.displayName
+
+		$scope.jeopardy = function(){
+			$state.go('section.jeopardy10')
+		}
+
+}])
+.controller('JeopardyTenCtrl',['$scope','$state','$rootScope', function($scope,$state,$rootScope){
 
 		$scope.name = $rootScope.authData.google.displayName
 
